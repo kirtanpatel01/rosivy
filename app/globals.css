@@ -27,7 +27,7 @@
 }
 
 body {
-  font-family: "Sono", sans-serif;
+  /* font-family: "Comic Neue", sans-serif; */
   font-size: 1.2rem;
   font-weight: 500;
   background-color: var(--color-p2);

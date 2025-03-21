@@ -73,8 +73,8 @@ const Navbar = () => {
                         </motion.span>
                     </button>
 
-                    <button className='hover:text-black cursor-pointer transition-all duration-300'>About Me</button>
-                    <button className='hover:text-black cursor-pointer transition-all duration-300'>Contact Me</button>
+                    <button className='hover:text-black cursor-pointer transition-all duration-300 hidden md:flex'>About Me</button>
+                    <button className='hover:text-black cursor-pointer transition-all duration-300 hidden md:flex'>Contact Me</button>
                 </div>
 
                 {/* Hamburger Button with Animation */}
