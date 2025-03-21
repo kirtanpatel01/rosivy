@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: "Rosivy",
     images: [
       {
-        url: "https://rosivy.vercel.app/images/yah_logo.png", // Use a high-resolution image
-        width: 1200, // Recommended width
-        height: 630, // Recommended height
+        url: "https://rosivy.vercel.app/images/yah_logo.png",
+        width: 313,
+        height: 313,
         alt: "Rosivy Store Preview",
       },
     ],
