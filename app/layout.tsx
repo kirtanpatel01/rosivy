@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { outfit, sono, ysabeau, josefin_sans, comic_neue } from './fonts'; 
+import { sono } from './fonts'; 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
