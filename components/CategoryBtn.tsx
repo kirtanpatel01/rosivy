@@ -58,12 +58,13 @@ const CategoryBtn = ({ className }: { className: string }) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="absolute top-8 bg-white min-w-36 border-6 border-p5 rounded-2xl px-4 py-3 space-y-2 shadow-md"
+            className="absolute top-8 bg-white min-w-36 border-6 border-p5 rounded-2xl px-4 py-3 space-y-2 shadow-lg shadow-p6/25"
           >
             {list.map((item) => (
               <li
                 key={item}
-                className="flex flex-col items-center text-black gap-2 border border-p6/40 rounded-full px-2 py-1 cursor-pointer hover:bg-p2/50"
+                onClick={handleClick}
+                className="flex flex-col items-center text-black gap-2 border border-p6/40 rounded-full px-2 py-1 cursor-pointer hover:bg-p4/25 hover:text-p6"
               >
                 <span>{item}</span>
               </li>

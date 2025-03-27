@@ -43,6 +43,7 @@ const Navbar = () => {
             <nav className='w-full max-w-7xl flex justify-between px-0 lg:p-3'>
                 {/* Right Part */}
                 <div className="flex items-center gap-4 lg:gap-6 m-2 lg:m-0">
+                    {/* logo  */}
                     <Link href={'/'} className='flex gap-1 items-center'>
                         <Image
                             src={'/images/logo.svg'}
@@ -52,14 +53,15 @@ const Navbar = () => {
                         />
                         <span className="text-4xl font-semibold">Rosivy</span>
                     </Link>
+                    {/* vr line  */}
                     <div className="h-6 w-0.5 bg-p6 rounded hidden md:block"></div>
+                    {/* other links  */}
                     <CategoryBtn className='hidden md:flex'/>
-
                     <button className='nav-link'>About Me</button>
                     <button className='nav-link'>Contact Me</button>
                 </div>
 
-                {/* Hamburger Button with Animation */}
+                {/* Hamburger Button */}
                 <motion.button
                     onClick={handleDropdownClick}
                     whileTap={{ scale: 0.5 }}
