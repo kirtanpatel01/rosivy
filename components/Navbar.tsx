@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaSearch } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
-import CategoryBtn from './CategoryBtn.jsx';
+import CategoryBtn from './CategoryBtn';
 
 const Navbar = () => {
     const [searchOpen, setSearchOpen] = useState(false);
@@ -39,7 +39,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="w-full fixed flex justify-center bg-p0 text-p6 shadow-lg shadow-p6/10 transition-all duration-300">
+        <div className="w-full fixed flex justify-center  bg-p0 text-p6 shadow-lg shadow-p6/10 transition-all duration-300">
             <nav className='w-full max-w-7xl flex justify-between px-0 lg:p-3'>
                 {/* Right Part */}
                 <div className="flex items-center gap-4 lg:gap-6 m-2 lg:m-0">

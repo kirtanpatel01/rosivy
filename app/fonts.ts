@@ -1,5 +1,5 @@
 // app/fonts.ts
-import { Outfit, Sono, Ysabeau, Josefin_Sans, Comic_Neue, Lato } from 'next/font/google';
+import { Outfit, Sono, Ysabeau, Josefin_Sans, Comic_Neue, Lato, Montserrat } from 'next/font/google';
 
 export const outfit = Outfit({
   subsets: ['latin'],
@@ -31,4 +31,8 @@ export const lato = Lato({
   subsets: ['latin'],
   display: 'swap',
   weight: ['100', '300', '400', '700', '900']
+})
+
+export const montserrat = Montserrat({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 })

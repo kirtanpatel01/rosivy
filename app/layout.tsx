@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { lato } from "./fonts";
+import { montserrat } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Rosivy | Home",
@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,9 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.className}`}>
+      <body className={`${montserrat.className}`}>
         <Navbar />
-        <div className="pt-[70px]">
+        <div className="pt-[55px] lg:pt-[65px]">
           {children}
         </div>
         <Footer />
