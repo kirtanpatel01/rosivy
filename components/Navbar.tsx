@@ -7,13 +7,12 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaSearch } from "react-icons/fa";
 import { IoMenu, IoClose } from "react-icons/io5";
-import { FaAngleDown } from "react-icons/fa6";
+import CategoryBtn from './CategoryBtn.jsx';
 
 const Navbar = () => {
     const [searchOpen, setSearchOpen] = useState(false);
     const [shake, setShake] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [isRotated, setIsRotated] = useState(false);
 
     const shakeAnimation = {
         rotate: [0, -10, 10, -10, 10, 0],
@@ -39,19 +38,11 @@ const Navbar = () => {
         setDropdownOpen(prev => !prev)
     }
 
-    const handleClick = () => {
-        const sound = new Audio('/sounds/drop.wav');
-        sound.volume = 0.6;
-        sound.play();
-
-        setIsRotated(prev => !prev); // Toggle the rotation state
-    };
-
     return (
         <div className="w-full fixed flex justify-center bg-p0 text-p6 shadow-lg shadow-p6/10 transition-all duration-300">
             <nav className='w-full max-w-7xl flex justify-between px-0 lg:p-3'>
                 {/* Right Part */}
-                <div className="flex items-center gap-2 lg:gap-6 m-2 lg:m-0">
+                <div className="flex items-center gap-4 lg:gap-6 m-2 lg:m-0">
                     <Link href={'/'} className='flex gap-1 items-center'>
                         <Image
                             src={'/images/logo.svg'}
@@ -59,22 +50,13 @@ const Navbar = () => {
                             width={40}
                             height={40}
                         />
-                        <span className="text-4xl font-semibold font-comic">Rosivy</span>
+                        <span className="text-4xl font-semibold">Rosivy</span>
                     </Link>
                     <div className="h-6 w-0.5 bg-p6 rounded hidden md:block"></div>
-                    <button
-                        className='items-center gap-1 hidden md:flex hover:text-black cursor-pointercursor-pointer transition-all duration-300 cursor-pointer'
-                        onClick={handleClick}>
-                        Categories
-                        <motion.span
-                            animate={{ rotate: isRotated ? 180 : 0 }} // Rotate 180 degrees if `isRotated` is true
-                            transition={{ duration: 0.3 }}>
-                            <FaAngleDown />
-                        </motion.span>
-                    </button>
+                    <CategoryBtn className='hidden md:flex'/>
 
-                    <button className='hover:text-black cursor-pointer transition-all duration-300 hidden md:flex'>About Me</button>
-                    <button className='hover:text-black cursor-pointer transition-all duration-300 hidden md:flex'>Contact Me</button>
+                    <button className='nav-link'>About Me</button>
+                    <button className='nav-link'>Contact Me</button>
                 </div>
 
                 {/* Hamburger Button with Animation */}
@@ -135,7 +117,7 @@ const Navbar = () => {
                             className='rounded-full border-2 px-3'
                         />
                         <span className='w-full h-px bg-p6/25'></span>
-                        <motion.button whileTap={{ scale: 0.95 }} className='flex items-center gap-1'>Categories <FaAngleDown /></motion.button>
+                        <CategoryBtn className='' />
                         <span className='w-full h-px bg-p6/25'></span>
                         <motion.button whileTap={{ scale: 0.95 }} className='nav-btn'>Cart</motion.button>
                         <span className='w-full h-px bg-p6/25 '></span>

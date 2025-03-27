@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { sono } from './fonts'; 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { lato } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Rosivy | Home",
@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sono.className}`}>
+      <body className={`${lato.className}`}>
         <Navbar />
         <div className="pt-[70px]">
           {children}

@@ -19,15 +19,10 @@
   --color-p9: oklch(0.408 0.153 2.432);
   --color-p10: oklch(0.284 0.109 3.907);
 
-  --font-comic: "Comic Neue", sans-serif;
-  --font-ysabeau: "Ysabeau";
-  --font-sono: "Sono";
-
   --breakpoint-xs: 
 }
 
 body {
-  /* font-family: "Comic Neue", sans-serif; */
   font-size: 1.2rem;
   font-weight: 500;
   background-color: var(--color-p2);
@@ -37,4 +32,8 @@ body {
 
 .nav-btn {
   @apply w-fit px-4 py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25
+}
+
+.nav-link {
+  @apply hover:text-black cursor-pointer transition-all duration-300 hidden md:flex
 }
