@@ -35,11 +35,11 @@ body {
 }
 
 .cont1 {
-  @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-4
+  @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-2 sm:p-4
 }
 
 .nav-btn {
-  @apply w-fit px-4 py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25 cursor-pointer font-medium
+  @apply w-fit px-2 sm:px-4 py-0.5 sm:py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25 cursor-pointer font-medium text-sm sm:text-base
 }
 
 .nav-link {
