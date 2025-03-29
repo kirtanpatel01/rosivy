@@ -35,7 +35,7 @@ body {
 }
 
 .cont1 {
-  @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-3 sm:p-4
+  @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-2 min-[345px]:p-3 sm:p-4
 }
 
 .nav-btn {
