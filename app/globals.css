@@ -34,8 +34,12 @@ body {
   @apply w-full max-w-7xl
 }
 
+.cont1 {
+  @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-4
+}
+
 .nav-btn {
-  @apply w-fit px-4 py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25
+  @apply w-fit px-4 py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25 cursor-pointer font-medium
 }
 
 .nav-link {

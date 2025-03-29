@@ -9,12 +9,12 @@ const Footer = () => {
       <div className="cont px-4 py-10 text-p0 space-y-8 w-full max-w-6xl">
         {/* Subscribe input box */}
         <div className='flex flex-col md:flex-row justify-between items-center gap-6'>
-          <div className="w-full md:w-fit flex justify-between items-center p-2 rounded-lg border-2 border-white bg-p1/10 space-x-2">
+          <div className="w-fit flex flex-col min-[320px]:flex-row justify-between items-center p-2 rounded-lg border-2 border-white bg-p1/10 gap-2">
             <input
               type="text"
-              className="text-p0 outline-none placeholder:text-p0/75 flex-grow bg-transparent"
+              className="text-p0 outline-none placeholder:text-p0/75 bg-transparent"
               placeholder='Enter your email' />
-            <div className="h-8 w-px bg-white"></div>
+            <div className="h-px w-full bg-white min-[320px]:w-px min-[320px]:h-8"></div>
             <button className='hover:bg-p1 px-2 py-1 rounded-md text-p0 hover:text-p6 cursor-pointer border border-p0 transition-all duration-300'>
               Subscribe
             </button>
