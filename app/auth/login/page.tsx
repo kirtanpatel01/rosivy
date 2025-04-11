@@ -1,4 +1,5 @@
-import { SignInWithGoogle, SignInWithResend } from '@/components/sign-in'
+import { signIn } from '@/auth'
+import { SignInWithGoogle } from '@/components/sign-in'
 import Link from 'next/link'
 import React from 'react'
 
@@ -22,7 +23,10 @@ const page = () => {
         <div className='fji min-h-screen p-4'>
             <div className='auth-cont w-full max-w-xl h-fit fci gap-8'>
                 <h1>Login to <span className='text-p6'>Rosivy</span></h1>
-                <form className='w-full max-w-md fci gap-8'>
+                <form action={async (formData) => {
+                    'use server'
+                    await signIn('credentials', formData)
+                }} className='w-full max-w-md fci gap-8'>
                     {inputs.map((input) => (
                         <li key={input.name} className='w-full max-w-md fci'>
                             <label htmlFor={input.name} className='font-medium flex-1 self-start'>{input.label}:</label>
@@ -35,7 +39,7 @@ const page = () => {
                 </form>
                 <hr className='text-p6 w-full max-w-80 h-px'/>
                 <SignInWithGoogle />
-                <SignInWithResend />
+                {/* <SignInWithResend /> */}
                 <span>Don&apos;t have an account ? <Link href={'/auth/register'} className="text-p6 font-medium">Register</Link></span>
             </div>
         </div>

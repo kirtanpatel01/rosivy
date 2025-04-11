@@ -1,3 +1,5 @@
+import { Connection } from "mongoose";
+
 interface ProductCard {
     id: string;
     image: string;
@@ -18,3 +20,11 @@ interface RegisterFormState {
     values: FormValues;
     field?: keyof FormValues;
 }
+
+declare global {
+    var mongoose: {
+        conn: Connection | null
+        promise: Promise<Connection> | null
+    }
+}
+

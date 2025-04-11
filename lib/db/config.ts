@@ -13,7 +13,7 @@ const options = {
     deprecationErrors: true,
   },
 }
- 
+
 let client: MongoClient
  
 if (process.env.NODE_ENV === "development") {
