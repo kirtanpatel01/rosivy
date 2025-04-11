@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import Card from "@/components/Card";
 import { products } from "@/lib/constants";
 
