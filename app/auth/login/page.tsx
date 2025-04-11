@@ -36,7 +36,7 @@ const page = () => {
                 <hr className='text-p6 w-full max-w-80 h-px'/>
                 <SignInWithGoogle />
                 <SignInWithResend />
-                <span>Don't have an account ? <Link href={'/auth/register'} className="text-p6 font-medium">Register</Link></span>
+                <span>Don&apos;t have an account ? <Link href={'/auth/register'} className="text-p6 font-medium">Register</Link></span>
             </div>
         </div>
     )

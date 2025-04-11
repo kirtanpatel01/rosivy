@@ -3,7 +3,7 @@ import Card from "@/components/Card";
 import { products } from "@/lib/constants";
 
 export default async function Home() {
-  const session = await auth();
+  // const session = await auth();
   // {
   //   user: {
   //     name: 'Kirtan Patel',
