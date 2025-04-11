@@ -56,7 +56,7 @@ const Navbar = () => {
                     {/* vr line  */}
                     <div className="h-6 w-0.5 bg-p6 rounded hidden md:block"></div>
                     {/* other links  */}
-                    <CategoryBtn className='hidden md:flex'/>
+                    <CategoryBtn className='hidden md:flex' />
                     <button className='nav-link'>About Me</button>
                     <button className='nav-link'>Contact Me</button>
                 </div>
@@ -98,12 +98,17 @@ const Navbar = () => {
                         width={32}
                         height={32}
                     />
-                    <Image
-                        src={'/images/user.svg'}
-                        alt='user'
-                        width={28}
-                        height={28}
-                    />
+                    {false ? (
+                        <Image
+                            src={'/images/user.svg'}
+                            alt='user'
+                            width={28}
+                            height={28}
+                        />) : (
+                        <Link href={'/auth/login'} className="nav-btn">
+                            Login
+                        </Link>
+                    )}
                 </div>
 
                 {/* Mobile Dropdown Menu with Animation */}
@@ -123,7 +128,12 @@ const Navbar = () => {
                         <span className='w-full h-px bg-p6/25'></span>
                         <motion.button whileTap={{ scale: 0.95 }} className='nav-btn'>Cart</motion.button>
                         <span className='w-full h-px bg-p6/25 '></span>
-                        <motion.button whileTap={{ scale: 0.95 }} className='nav-btn'>Profile</motion.button>
+                        {false ? (
+                            <motion.button whileTap={{ scale: 0.95 }} className='nav-btn'>Profile</motion.button>) : (
+                            <Link href={'/auth/login'} className="nav-btn">
+                                Login
+                            </Link>
+                        )}
                     </motion.div>
                 </AnimatePresence>
             </nav>

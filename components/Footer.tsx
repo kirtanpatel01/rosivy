@@ -22,11 +22,11 @@ const Footer = () => {
 
           <div className='flex flex-col items-center md:items-end text-center md:text-right'>
             <h2 className='font-semibold'>Know more:</h2>
-            <span className='flex items-center gap-2'>
+            <span className='flex items-center gap-2 hover:text-black cursor-pointer'>
               <MdAlternateEmail size={20} />
               <span>contact@rosivy.com</span>
             </span>
-            <span className='flex items-center gap-2'>
+            <span className='flex items-center gap-2 hover:text-black cursor-pointer'>
               <MdLocalPhone size={20} />
               <span>+92 230932 233434</span>
             </span>

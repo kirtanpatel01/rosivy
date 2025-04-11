@@ -32,11 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
-        <Navbar />
-        <div className="pt-[55px] lg:pt-[63px] w-full min-h-screen flex justify-center">
-          {children}
-        </div>
-        <Footer />
+        {children}
       </body>
     </html>
   );

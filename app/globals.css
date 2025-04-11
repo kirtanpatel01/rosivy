@@ -38,6 +38,10 @@ body {
   @apply bg-white shadow-lg shadow-p4/15 rounded-xl p-2 min-[345px]:p-3 sm:p-4
 }
 
+.auth-cont {
+  @apply p-6 sm:p-12 rounded-2xl shadow-lg shadow-p4/15 bg-p0 border border-p6/50
+}
+
 .nav-btn {
   @apply w-fit px-2 sm:px-4 py-0.5 sm:py-1 rounded-full bg-p6 text-p1 shadow-md shadow-p4/25 cursor-pointer font-medium
 }
@@ -48,6 +52,26 @@ body {
 
 .footer-input {
   @apply px-4 py-3 rounded-lg border-2 border-white bg-p1/5 
+}
+
+.primary-btn {
+  @apply w-fit px-4 py-2 rounded-lg bg-p6 hover:bg-p7 text-p1 text-xl shadow-md shadow-p4/25  font-semibold
+}
+
+.fci {
+  @apply flex flex-col items-center
+}
+
+.fji {
+  @apply flex justify-center items-center
+}
+
+input {
+  @apply w-full p-3 rounded-md bg-p1/30 border border-p6 placeholder:text-p6/50 outline-p6
+}
+
+h1 {
+  @apply text-3xl font-bold
 }
 
 h2 {
