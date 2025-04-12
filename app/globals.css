@@ -39,7 +39,7 @@ body {
 }
 
 .auth-cont {
-  @apply p-6 sm:p-12 rounded-2xl shadow-lg shadow-p4/15 bg-p0 border border-p6/50
+  @apply p-6 sm:p-12 rounded-2xl shadow-lg shadow-p6/15 bg-p0 border border-p6/50
 }
 
 .nav-btn {

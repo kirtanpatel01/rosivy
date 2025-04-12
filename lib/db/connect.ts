@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import client from "./config";
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
@@ -20,12 +21,14 @@ export async function connectToMongoDb() {
     if(!cached.promise) {
         const opts = {
             bufferCommands: true,
-            maxPoolSize: 5
+            maxPoolSize: 10
         }
 
-        cached.promise = mongoose
-            .connect(MONGODB_URI, opts)
-            .then(() => mongoose.connection)
+        console.log(MONGODB_URI)
+        cached.promise = mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
+            console.log("MongoDB connected");
+            return mongoose.connection;
+          });
     }
 
     try {

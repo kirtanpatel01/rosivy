@@ -1,9 +1,10 @@
 'use client'
 
-import { registerUser } from '@/lib/actions/auth.actions'
+import { registerUser } from '@/lib/auth.action'
 import Link from 'next/link'
 import { useState, useEffect, useActionState, ChangeEvent } from 'react'
 import { Eye, EyeClosed } from 'lucide-react';
+import { RegisterFormState } from '@/types';
 
 const initialState: RegisterFormState = {
     status: '',
