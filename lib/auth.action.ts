@@ -7,7 +7,7 @@ import { User } from '@/models/User';
 import { RegisterSchema } from './zod';
 import { signIn } from '@/auth'; // make sure this path is correct
 import { AuthError } from 'next-auth';
-import { redirect } from 'next/navigation';
+// import { redirect } from 'next/navigation';
 
 export async function registerUser(prevState: RegisterFormState, formData: FormData): Promise<RegisterFormState> {
     const email = formData.get('email')?.toString() || ''
@@ -74,7 +74,7 @@ export async function loginUser(prevState: LoginFormState, formData: FormData): 
   const phone = formData.get('phone')?.toString() || '';
   const password = formData.get('password')?.toString() || '';
 
-  const identifier = email || phone;
+  // const identifier = email || phone;
 
   try {
     const res = await signIn('credentials', {

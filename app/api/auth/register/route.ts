@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         if(!result.success) {
             const issue = result.error.issues[0]
             const error = issue?.message || 'Invalid form submission'
-            const field = issue.path[0] as keyof FormValues
+            // const field = issue.path[0] as keyof FormValues
 
             return NextResponse.json(
                 {error},
