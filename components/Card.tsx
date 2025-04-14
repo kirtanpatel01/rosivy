@@ -1,3 +1,4 @@
+import { ProductCard } from "@/types";
 import Image from "next/image"
 import { IoHeartOutline, IoHeart } from "react-icons/io5";
 
