@@ -3,7 +3,6 @@
 import { connectToMongoDb } from "@/lib/db/connect";
 import { RegisterSchema } from "@/lib/zod";
 import { User } from "@/models/User";
-import { FormValues } from "@/types";
 import { NextResponse, NextRequest } from "next/server";
 
 export async function POST(req: NextRequest) {
