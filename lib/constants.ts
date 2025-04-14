@@ -1,3 +1,5 @@
+import { ProductCard } from "@/types";
+
 export const products: ProductCard[] = [
     {
         id: "1",
