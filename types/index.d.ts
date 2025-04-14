@@ -21,6 +21,16 @@ interface RegisterFormState {
     field?: keyof FormValues;
 }
 
+interface LoginFormState {
+    status: "SUCCESS" | "ERROR" | "";
+    msg: string;
+    values: {
+        email: string,
+        phone: string,
+        password: string,
+    };
+}
+
 declare global {
     var mongoose: {
         conn: Connection | null

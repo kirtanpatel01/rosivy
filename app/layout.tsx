@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat } from "./fonts";
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
   title: "Rosivy | Home",
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.className}`}>
+        <Toaster richColors position="bottom-right" />
         {children}
       </body>
     </html>

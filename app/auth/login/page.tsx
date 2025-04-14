@@ -1,16 +1,27 @@
 // app\auth\login\page.tsx
-
 'use client'
 
 import { SignInWithGoogle } from '@/components/sign-in'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import { handleLogin } from './actions'
+import React, { useActionState, useState } from 'react'
 import { ArrowLeftRight } from 'lucide-react';
+import { loginUser } from '@/lib/auth.action'
+import { LoginFormState } from '@/types'
+
+const initialState: LoginFormState = {
+    status: "",
+    msg: '',
+    values: {
+        email: '',
+        phone: '',
+        password: '',
+    }
+}
 
 const page = () => {
-    const [loginField, setLoginField] = useState('email');
-    const [swapHover, setSwapHover] = useState(false)
+    const [loginField, setLoginField] = useState<'email' | 'phone'>('email');
+    const [swapHover, setSwapHover] = useState(false);
+    const [state, formAction, pending] = useActionState(loginUser, initialState);
 
     const toggleField = () => {
         setLoginField(prev => prev === 'email' ? 'phone' : 'email')
@@ -20,7 +31,12 @@ const page = () => {
         <div className='fji min-h-screen p-4'>
             <div className='auth-cont w-full max-w-xl h-fit fci gap-8'>
                 <h1>Login to <span className='text-p6'>Rosivy</span></h1>
-                <form action={handleLogin} className='w-full max-w-md fci gap-8'>
+
+                {state?.status === 'ERROR' && (
+                    <div className="text-red-500">{state.msg}</div>
+                )}
+
+                <form action={formAction} className='w-full max-w-md fci gap-8'>
                     <div className='w-full max-w-md fci relative'>
                         <button
                             type='button'
@@ -42,8 +58,9 @@ const page = () => {
                             id={loginField}
                             type={loginField === 'email' ? 'text' : 'number'}
                             className="auth-input"
-                            placeholder={'Enter your '+loginField}
+                            placeholder={'Enter your ' + loginField}
                             name={loginField}
+                            defaultValue={state.values[loginField]}
                         />
                     </div>
                     <div className='w-full max-w-md fci'>
@@ -56,10 +73,14 @@ const page = () => {
                             className="auth-input"
                             placeholder={'Enter your password'}
                             name='password'
+                            defaultValue={state.values.password}
                         />
                     </div>
-                    <button type='submit' className="primary-btn">
-                        Login
+                    <button type='submit' disabled={pending} className={`primary-btn flex items-center justify-center gap-2 ${pending ? 'cursor-not-allowed' : "cursor-pointer" }`}>
+                        {pending && (
+                            <span className="w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"></span>
+                        )}
+                        {pending ? "Logging in..." : 'Login'}
                     </button>
                 </form>
                 <hr className='text-p6 w-full max-w-80 h-px' />

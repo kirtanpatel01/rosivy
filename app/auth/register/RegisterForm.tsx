@@ -21,7 +21,6 @@ const initialState: RegisterFormState = {
     },
 }
 
-
 const RegisterForm = () => {
     const [formValues, setFormValues] = useState(initialState.values)
     const [state, formAction, pending] = useActionState(registerUser, initialState)
@@ -128,8 +127,6 @@ const RegisterForm = () => {
 
                 <hr className='text-p6 w-full max-w-80 h-px' />
                 <span>Already have an account ? <Link href={'/auth/login'} className="text-p6 font-medium">Login</Link></span>
-
-                <button type='button' onClick={() => toast('Su kare che gendu | -_-')}>Show Toast</button>
             </div>
         </div>
     )
