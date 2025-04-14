@@ -9,11 +9,12 @@ import Credentials from "next-auth/providers/credentials"
 import { SignInSchema } from "./lib/zod";
 import { ZodError } from "zod";
 import { User } from "./models/User";
+import { connectToMongoDb } from "./lib/db/connect";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: MongoDBAdapter(client),
   providers: [
-    Google, 
+    Google,
     Resend,
     Credentials({
       credentials: {
@@ -22,24 +23,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
         try {
-          let user = null
-  
-          const { email, password } = await SignInSchema.parseAsync(credentials)
-   
-          // user = await User.findOne()
-   
+          const { email, password } = await SignInSchema.parseAsync(credentials);
+
+          await connectToMongoDb();
+
+          const user = await User.findOne({ email });
+
           if (!user) {
-            // Optionally, this is also the place you could do a user registration
-            throw new Error("Invalid credentials.")
+            return null;
           }
-   
-          // return user object with their profile data
-          return { email, password }
+          
+          return user;
         } catch (error) {
           if (error instanceof ZodError) {
-            // Return `null` to indicate that the credentials are invalid
-            return null
+            return null;
           }
+          throw error;
         }
       },
     })

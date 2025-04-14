@@ -1,9 +1,10 @@
+// app\api\auth\register\route.ts
+
 import { connectToMongoDb } from "@/lib/db/connect";
 import { RegisterSchema } from "@/lib/zod";
 import { User } from "@/models/User";
 import { FormValues } from "@/types";
 import { NextResponse, NextRequest } from "next/server";
-import { z } from "zod"; 
 
 export async function POST(req: NextRequest) {
     try {
@@ -46,7 +47,6 @@ export async function POST(req: NextRequest) {
             phone,
             password
         })
-
 
         return NextResponse.json(
             { message: 'User created successfully!' },

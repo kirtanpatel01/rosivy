@@ -8,8 +8,8 @@ interface ProductCard {
 }
 
 interface FormValues {
-    name: string;
     email: string;
+    phone: string;
     password: string;
     confirmPassword: string
 }

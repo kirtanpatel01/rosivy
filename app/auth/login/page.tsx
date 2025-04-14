@@ -1,3 +1,5 @@
+// app\auth\login\page.tsx
+
 'use client'
 
 import { SignInWithGoogle } from '@/components/sign-in'
